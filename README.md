@@ -17,6 +17,5 @@ python3 -m venv /path/to/new/virtual/environment
 go to the folder where the code is and install the libraries with the command in terminal.
 
   ```sh
-
 pip install -r requirements.txt
-  ```sh
+```
