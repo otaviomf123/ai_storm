@@ -19,3 +19,6 @@ go to the folder where the code is and install the libraries with the command in
   ```sh
 pip install -r requirements.txt
 ```
+
+download the preloaded model data from the link: [Download the files](https://drive.google.com/file/d/16OGhBi8GAa9xq5tE1q9AwzMRGlbaLkfc/view?usp=sharing)
+
