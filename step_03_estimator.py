@@ -4,7 +4,7 @@ lat_min=-32
 lat_max=-22
 lon_max=-45
 lon_min=-60
-dx_dy=0.05
+dx_dy=0.15
 ### Output savedir 
 outdir='.'
 ## batch size and the size of each batch will have, 
@@ -69,7 +69,7 @@ min_val=[183.,183.,183.,183.,183.,183.,183.,183.,-30.,0]
 scaler=MinMaxScaler((0,1)).fit([max_val,min_val])
 
 ## Loading files with database models, distance from satellite 
-bt = pickle.load(open('preload_files/proc_sat_dataset.dat', 'rb'))
+bt = pickle.load(open('preload_files/sat_dataset.pik', 'rb'))
 train_idxs=np.load('preload_files/train_idxs.npy')
 
 #Calculating index of the closest raw data nearest satellite
@@ -132,11 +132,25 @@ for filename in lista:
                 goes_bruto.append(goes_bruto_dt[ji])
             goes_dt=[]
             goes_bruto_dt=[]
-
     pred=np.array(pred)
     pred_class=np.array(pred_class)
     goes_bruto=np.array(goes_bruto)
+    ####### Bias ref 2km ####
+    est=[]
+    for k in range(len(pred)):
+        refle=np.max(pred[k])
+        gran=np.max(pred_class[k,0])
+        if refle>47. and gran>0.1:
+            refle=refle+(np.log((gran*32)+1)*3.14)
+            if refle>65:
+                refle=65
+            est.append(refle)
+        else:
+            est.append(refle)
+    est=np.array(est)
+    #########
     h = h5py.File(path, 'w')
+    dset = h.create_dataset('ref_02_bias', data=np.reshape(est,lon_grid.shape))
     dset = h.create_dataset('ref_02', data=np.reshape(pred[:,0],lon_grid.shape))
     dset = h.create_dataset('ref_04', data=np.reshape(pred[:,1],lon_grid.shape))
     dset = h.create_dataset('ref_06', data=np.reshape(pred[:,2],lon_grid.shape))
