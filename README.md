@@ -20,7 +20,7 @@ go to the folder where the code, and install the libraries with the command in t
 pip install -r requirements.txt
 ```
 
-download the preloaded model data from the link: [download the files](https://drive.google.com/file/d/16OGhBi8GAa9xq5tE1q9AwzMRGlbaLkfc/view?usp=sharing)
+download the preloaded model data from the link: [download the files](https://drive.google.com/file/d/10YwPNpIpbHm5GmWwerOkDLt0ZXnRvdP3/view?usp=sharing)
 and unzip the files into the folder preload_files.
 
 ## Quickstart
