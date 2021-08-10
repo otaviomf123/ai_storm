@@ -1,8 +1,8 @@
 import sys
 ### Domain configuration 
-lat_min=-36
-lat_max=-24
-lon_max=-46
+lat_min=-32
+lat_max=-22
+lon_max=-45
 lon_min=-60
 dx_dy=0.05
 ### Output savedir 
@@ -69,7 +69,7 @@ min_val=[183.,183.,183.,183.,183.,183.,183.,183.,-30.,0]
 scaler=MinMaxScaler((0,1)).fit([max_val,min_val])
 
 ## Loading files with database models, distance from satellite 
-bt = pickle.load(open('preload_files/sat_dataset.pik', 'rb'))
+bt = pickle.load(open('preload_files/proc_sat_dataset.dat', 'rb'))
 train_idxs=np.load('preload_files/train_idxs.npy')
 
 #Calculating index of the closest raw data nearest satellite
