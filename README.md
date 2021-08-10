@@ -14,7 +14,7 @@ python3 -m venv /path/to/new/virtual/environment
   ```
 
 
-go to the folder where the code is and install the libraries with the command in terminal.
+go to the folder where the code, and install the libraries with the command in terminal.
 
   ```sh
 pip install -r requirements.txt
@@ -23,3 +23,4 @@ pip install -r requirements.txt
 download the preloaded model data from the link: [download the files](https://drive.google.com/file/d/16OGhBi8GAa9xq5tE1q9AwzMRGlbaLkfc/view?usp=sharing)
 and unzip the files into the folder preload_files.
 
+## Quickstart
