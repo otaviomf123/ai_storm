@@ -7,7 +7,7 @@ Below is an example of a supercellular case that occurred in southern Brazil, co
 
 # Installation
 
-create a new environment for the libraries (highly recommended) 
+create a new environment for the libraries (highly recommended) more information in [Pt-br](https://docs.python.org/pt-br/3/tutorial/venv.html) [En](https://docs.python.org/3/tutorial/venv.html)
 
   ```sh
 python3 -m venv /path/to/new/virtual/environment
