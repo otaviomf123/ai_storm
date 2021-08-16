@@ -12,9 +12,9 @@ create a new environment for the libraries (highly recommended)
   ```sh
 python3 -m venv /path/to/new/virtual/environment
   ```
+Download the files from github and extract them into a folder that will be your working directory 
 
-
-go to the folder where the code, and install the libraries with the command in terminal.
+Go to the folder where the code, and install the libraries with the command in terminal.
 
   ```sh
 pip install -r requirements.txt
